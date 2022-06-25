@@ -1,0 +1,24 @@
+.DigitInput {
+    display: flex;
+    border: 1px solid $color3;
+    width: 100px;
+
+    .DigitInput__Digit {
+        padding: 4px 10px;
+        text-align: center;
+        font-size: 16px;
+        margin-top: 3px;
+    }
+
+    .DigitInput__Control {
+        background-color: $color1;
+        border: 0;
+        padding: 4px 6px;
+        font-size: 20px;
+        font-weight: bold;
+        color: $color4;
+        cursor: pointer;
+        outline: none;
+        width: 100px;
+    }
+}

@@ -1,0 +1,81 @@
+// $width: 320px;
+$width: 100%;
+
+.InputContainer {
+    .Label {
+        color: $disable;
+        font-size: 16px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 10px;
+        transition: 300ms ease all;
+    }
+
+    .Bar {
+        position: relative;
+        display: block;
+        width: $width;
+
+        &:before {
+            content: '';
+            height: 2px;
+            width: 0;
+            bottom: 0px;
+            position: absolute;
+            background: $color3;
+            transition: 300ms ease all;
+            left: 0%;
+        }
+    }
+
+    .Input {
+        background: none;
+        color: $disable;
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: $width;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid $disable;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:focus~.Label,
+        &:valid~.Label {
+            top: -14px;
+            font-size: 12px;
+            color: $color3;
+        }
+
+        &:focus~.Bar:before {
+            width: $width;
+        }
+    }
+
+    .ErrorMessage {
+        font-weight: bold;
+        color: $danger;
+        padding: 8px 0;
+        font-size: 12px;
+    }
+
+    &.Error {
+        .Input {
+            border-color: $danger !important;
+        }
+
+        .Bar::before {
+            background-color: $danger !important;
+        }
+
+        .Label {
+            color: $danger !important;
+            font-weight: bold;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.FixedToolbar,
+.StickyToolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
+.StickyToolbar {
+    transform: translateY(-80px);
+
+    &.StickyToolbar__Entering {
+        animation: slideFromUp 300ms ease-in-out;
+        animation-direction: forwards;
+        animation-fill-mode: forwards;
+    }
+
+    &.StickyToolbar__Entered {
+        transform: translateY(0);
+        animation: unset;
+    }
+
+    &.StickyToolbar__Exiting {
+        animation: slideFromUp 300ms ease-in-out;
+        animation-direction: reverse;
+    }
+
+    &.StickyToolbar__Exited {
+        transform: translateY(-80px);
+        animation: unset;
+    }
+}
+
+@keyframes slideFromUp {
+    0% {
+        transform: translateY(-80px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

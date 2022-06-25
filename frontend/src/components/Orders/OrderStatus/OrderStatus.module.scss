@@ -1,0 +1,12 @@
+.OrderStatus {
+    border: 1px solid $success;
+    color: $success;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    font-weight: bold;
+
+    &.Closed {
+        color: $disable;
+        border-color: $disable;
+    }
+}

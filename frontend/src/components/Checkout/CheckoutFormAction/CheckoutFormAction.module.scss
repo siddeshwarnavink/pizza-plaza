@@ -1,0 +1,19 @@
+.CheckoutFormAction {
+    display: flex;
+    padding: 10px 0;
+    padding-bottom: 16px;
+
+    .CheckoutFormAction__Button {
+        width: 20%;
+    }
+
+    .CheckoutFormAction__Spacer {
+        flex: 1;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .CheckoutFormAction__Button {
+            width: 30%;
+        }
+    }
+}

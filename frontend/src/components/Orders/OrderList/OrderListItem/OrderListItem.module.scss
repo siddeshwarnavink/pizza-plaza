@@ -1,0 +1,96 @@
+.OrderListItem {
+    padding: 12px 20px;
+    background-color: #fff;
+    border-left: 8px solid $success;
+    border-radius: 5px;
+    margin-bottom: 12px;
+
+    &.ClosedStatus {
+        border-color: $disable;
+    }
+
+    .OrderDetail {
+        display: flex;
+
+        .OrderDetail__id {
+            display: block;
+            font-weight: bold;
+            margin-top: 6px;
+        }
+
+        .OrderDetail__Status {
+            margin-left: 10px;
+        }
+
+        .OrderDetail__Spacer {
+            flex: 1;
+        }
+
+        .OrderDetail__ExpandToggle {
+            cursor: pointer;
+            transform: rotate(180deg);
+            transition: transform 300ms ease;
+
+            svg path {
+                fill: #777777;
+                transition: fill 300ms ease-in;
+            }
+
+            &.Expanded {
+                transform: rotate(0);
+
+                svg path {
+                    fill: #000;
+                }
+            }
+        }
+    }
+
+    .OrderDescription {
+        color: $disable;
+        padding: 5px;
+    }
+
+    .OrderList {
+        margin-top: 5px;
+        width: 20vw;
+        @include appScrollbar;
+
+        @media only screen and (max-width: 600px) {
+            width: 100%;
+        }
+
+        &.OrderList__Entering {
+            animation: expandFromTop 500ms ease;
+            animation-fill-mode: forwards;
+        }
+
+        &.OrderList__Entered {
+            height: 250px;
+            overflow-y: auto;
+        }
+
+        &.OrderList__Exiting {
+            animation: expandFromTop 500ms ease;
+            animation-direction: reverse;
+            animation-fill-mode: forwards;
+        }
+
+        &.OrderList__Exited {
+            height: 0;
+            overflow: hidden;
+        }
+    }
+}
+
+@keyframes expandFromTop {
+    from {
+        height: 0px;
+        overflow-y: hidden;
+    }
+
+    to {
+        height: 250px;
+        overflow-y: auto;
+    }
+}

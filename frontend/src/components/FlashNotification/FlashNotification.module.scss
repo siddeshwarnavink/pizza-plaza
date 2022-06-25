@@ -1,0 +1,89 @@
+.FlashNotification {
+    padding: 10px 1em;
+    background-color: $success;
+    color: #fff;
+    display: flex;
+    width: 20em;
+    position: fixed;
+    bottom: 5em;
+    right: 3em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 16px;
+    animation: slideFromUp 300ms ease-in-out;
+
+    &.Animation__Entered {
+        transform: translateY(0);
+    }
+
+    &.Animation__Exiting {
+        animation: unset;
+    }
+
+    &.Animation__Exited {
+        animation: slideFromUp 300ms ease-in-out;
+        animation-direction: reverse;
+        animation-fill-mode: forwards;
+    }
+
+    .FlashNotification__Spacer {
+        flex: 1;
+    }
+
+    &.Danger {
+        background-color: $danger;
+        color: #fff;
+    }
+
+    &.Info {
+        background-color: #0277BD;
+        color: #fff;
+    }
+
+    &.Warning {
+        background-color: $warning;
+        color: #000;
+
+        .FlashNotification__Action {
+            border-color: #000;
+            color: #000;
+        }
+    }
+
+    .FlashNotification__Message {
+        margin-top: 5px;
+    }
+
+    .FlashNotification__Action {
+        background-color: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 5px 12px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        & {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: none;
+
+            .FlashNotification__Spacer {
+                flex: unset;
+                width: 30%;
+            }
+        }
+    }
+}
+
+@keyframes slideFromUp {
+    0% {
+        transform: translateY(80px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,42 @@
+.SideDrawer {
+    padding: 10px;
+    position: fixed;
+    background-color: #fff;
+    height: 100vh;
+    width: 80%;
+    top: 0;
+    left: 0;
+    z-index: 300;
+    padding-top: 6em;
+    transform: translateX(-100vw);
+    box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.25);
+
+    &.SideDrawer__Entering {
+        animation: slideFromLeft 500ms ease;
+        animation-fill-mode: forwards;
+    }
+
+    &.SideDrawer__Entered {
+        transform: translateX(0);
+    }
+
+    &.SideDrawer__Exiting {
+        animation: slideFromLeft 500ms ease;
+        animation-fill-mode: forwards;
+        animation-direction: reverse;
+    }
+
+    &.SideDrawer__Exited {
+        transform: translateX(-100vw);
+    }
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

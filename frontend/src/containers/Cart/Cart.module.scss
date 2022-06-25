@@ -1,0 +1,41 @@
+.CartBrowserContainer {
+    margin-right: 2.5em;
+
+    .Cart {
+        transition: opacity 300ms ease-in-out;
+        opacity: 0;
+
+        &.Cart__Close {
+            opacity: 0;
+        }
+
+        &.Cart__Open {
+            opacity: 1 !important;
+        }
+    }
+}
+
+.CartMobileContainer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+
+    .Cart {
+        transition: 500ms ease-in-out;
+        transform: translateY(500px);
+        opacity: 0;
+        height: 100%;
+
+
+        &.Cart__Close {
+            opacity: 0;
+            transform: translateY(500px);
+        }
+
+        &.Cart__Open {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

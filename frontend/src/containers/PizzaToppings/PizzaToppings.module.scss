@@ -1,0 +1,33 @@
+.PizzaToppings {
+    @include appScrollbar;
+
+    .PizzaToppings__Caption {
+        display: block;
+        font-size: 25px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .PizzaToppings__List {
+        height: 23em;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow-y: scroll;
+    }
+
+    .PizzaToppings__Action {
+        margin-top: 1.5em;
+        display: flex;
+        width: 20vw;
+        float: right;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .PizzaToppings__Action {
+            float: unset;
+            width: 100%;
+            justify-self: center;
+        }
+    }
+}

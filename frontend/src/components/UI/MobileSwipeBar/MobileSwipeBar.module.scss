@@ -1,0 +1,12 @@
+.MobileSwipeBar {
+    padding: 5px;
+    background-color: $disable;
+    opacity: .5;
+    border-radius: 20px;
+    margin: .5em auto;
+    width: 100px;
+
+    &:hover {
+        opacity: 1;
+    }
+}

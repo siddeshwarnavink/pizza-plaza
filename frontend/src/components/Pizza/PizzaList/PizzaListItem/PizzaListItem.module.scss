@@ -1,0 +1,97 @@
+.PizzaListItem {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    background-color: #fff;
+
+    @media only screen and (max-width: 600px) {
+        & {
+            margin-bottom: 1em;
+        }
+    }
+
+    .PizzaListItem__Image {
+        padding: 10px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+        .PizzaListItem_Image__Caption {
+            display: flex;
+            padding-top: 10em;
+
+            .PizzaListItem_Caption__Price {
+                font-weight: bolder;
+                font-size: 20px;
+                color: #fff;
+            }
+
+            .PizzaListItem_Caption__Customize {
+                button {
+                    border: 0;
+                    cursor: pointer;
+                    background-color: $color1;
+                    color: $color3;
+                    font-weight: bold;
+                    padding: 4px 12px;
+                }
+            }
+
+
+            .PizzaListItem_Caption__Spacer {
+                flex: 1;
+            }
+        }
+    }
+
+    .PizzaListItem__Detail {
+        padding: 1em 13px;
+
+        .PizzaListItem_Detail__Name {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .PizzaListItem_Detail__Description {
+            color: $disable;
+            font-size: 16px;
+        }
+
+        .PizzaListItem_Detail__Options {
+            display: flex;
+            padding: .5em 0;
+
+            &>* {
+                width: 50%;
+            }
+
+            @media only screen and (max-width: 600px) {
+                & {
+                    display: block;
+                }
+
+                &>* {
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .PizzaListItem_Detail__Options__Spacer {
+                width: 10%;
+            }
+        }
+
+        .PizzaListItem_Detail__Action {
+            float: right;
+            padding: .5em 0;
+            margin-bottom: 1em;
+
+            @media only screen and (max-width: 600px) {
+                & {
+                    float: unset;
+                }
+            }
+        }
+    }
+}

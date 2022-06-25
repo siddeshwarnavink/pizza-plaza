@@ -1,0 +1,76 @@
+.CartList {
+    @include appScrollbar;
+
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+
+    .CartList__Title {
+        font-size: 35px;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    ul.CartList__List {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 14.5em;
+
+        .FadeAnimation_Enter {
+            opacity: 0;
+        }
+
+        .FadeAnimation_EnterActive {
+            opacity: 1;
+            transition: opacity 300ms ease-out;
+        }
+
+        .FadeAnimation_Exit {
+            opacity: 1;
+        }
+
+        .FadeAnimation_ExitActive {
+            opacity: 0;
+            transition: opacity 300ms ease-out;
+        }
+    }
+
+    .CartList__Action {
+        width: 100%;
+        padding: 1em 0;
+
+        .CartList_Action__Subtotal {
+            display: flex;
+            padding: 5px 0;
+            
+            .CartList_Subtotal__Label,
+            .CartList_Subtotal__Value {
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+            .CartList_Subtotal__Value {
+                color: $color3;
+            }
+
+            .CartList_Subtotal__Spacer {
+                flex: 1;
+            }
+        }
+    }
+
+    &.Mobile {
+        ul.CartList__List {
+            height: 31em !important;
+        }
+
+        &.CompressedToBottom {
+            ul.CartList__List {
+                height: 15em !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.Chips {
+    background-color: $color1;
+    margin-right: 10px;
+    padding: 6px 12px;
+    font-size: 16px;
+    border-radius: 20px;
+    color: $color3;
+    font-weight: bold;
+    border: 1px solid $color3;
+    display: flex;
+    opacity: 1;
+
+    &.Chips__Exiting {
+        opacity: 0;
+        transition: opacity 200ms ease-out;
+    }
+
+    &.Chips__Exited {
+        opacity: 0;
+    }
+
+    .Chip__Close {
+        cursor: pointer;
+        background-color: $color3;
+        border: 0;
+        color: #fff;
+        border-radius: 100%;
+        margin-right: 5px;
+    }
+}

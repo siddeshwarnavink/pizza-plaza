@@ -1,0 +1,25 @@
+.CheckoutSteps {
+    display: flex;
+
+    .CheckoutSteps__Split {
+        display: block;
+        margin-top: 2em;
+        height: 10px;
+        width: 45px;
+        // background-color: $color1;
+        background: linear-gradient(to right, $color3 50%, $color1 50%);
+        background-size: 200% 100%;
+        background-position: right bottom;
+        z-index: -100;
+
+        &.Animate__Forward,
+        &.Animate__Reverse {
+            transition: background 400ms ease;
+            background-position: left bottom;
+        }
+
+        &.Animate__Reverse {
+            transform: rotate(180deg);
+        }
+    }
+}

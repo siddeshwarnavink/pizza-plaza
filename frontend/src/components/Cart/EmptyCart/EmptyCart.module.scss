@@ -1,0 +1,54 @@
+.EmptyCart {
+    text-align: center;
+    -webkit-animation: fadein 500ms;
+    -moz-animation: fadein 500ms;
+    -ms-animation: fadein 500ms;
+    -o-animation: fadein 500ms;
+    animation: fadein 500ms;
+
+    .EmptyCart__Text {
+        font-size: 30px;
+        color: $disable;
+        font-weight: bolder;
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

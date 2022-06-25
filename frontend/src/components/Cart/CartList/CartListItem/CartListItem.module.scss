@@ -1,0 +1,67 @@
+.CartListItem {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px auto;
+    border-bottom: 1px solid #ccc;
+    margin: .5em 0;
+    padding-bottom: .5em;
+    width: 20em;
+
+    @media only screen and (max-width: 600px) {
+        width: 100vw;
+    }
+
+    .CartListItem__Icon {
+        img {
+            width: 100px;
+            height: 80px;
+            object-fit: fill;
+        }
+    }
+
+    .CartListItem__Detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 10px;
+
+        .CartListItem_Detail__Title {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .CartListItem_Detail__SubTitle {
+            font-size: 15px;
+            color: $disable;
+        }
+
+        .CartListItem_Detail__Input {
+            padding: 5px 0;
+            display: flex;
+
+            .CartListItem_Detail_Input__Spacer {
+                flex: 1;
+            }
+
+            .CartListItem_Detail_Input__Price {
+                font-weight: bold;
+                font-size: 18px;
+                color: $color3;
+                margin-top: 8px;
+            }
+        }
+    }
+
+    .CartListItem__FlexBreak {
+        flex-basis: 100%;
+        height: 0;
+    }
+
+    .CartListItem__Toppings {
+        @include appScrollbar;
+
+        display: flex;
+        padding: 8px 0;
+        overflow-y: auto;
+    }
+}

@@ -1,0 +1,43 @@
+.PizzaToppingItem {
+    display: flex;
+    border-bottom: 1px solid #efefef;
+    padding: 12px 0;
+
+    .PizzaToppingItem__Icon {
+        img {
+            width: 100px;
+        }
+    }
+
+    .PizzaToppingItem__Detail,
+    .PizzaToppingItem__Action {
+        margin-top: 12px;
+    }
+
+    .PizzaToppingItem__Detail {
+        display: flex;
+        flex-direction: column;
+
+        .PizzaToppingItem_Detail__Title,
+        .PizzaToppingItem_Detail__Cost {
+            display: block;
+        }
+
+        .PizzaToppingItem_Detail__Title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .PizzaToppingItem_Detail__Cost {
+            color: $disable;
+        }
+    }
+
+    .PizzaToppingItem__Spacer {
+        flex: 1;
+    }
+
+    .PizzaToppingItem__Action {
+        width: 6em;
+    }
+}

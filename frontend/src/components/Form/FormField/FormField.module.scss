@@ -1,0 +1,15 @@
+.FormField {
+    position: relative;
+    margin: 45px 0;
+
+    .FormField__Label {
+        color: $disable;
+        padding: 5px 0;
+    }
+
+    .FormField__Error {
+        padding: 5px 0;
+        color: $danger;
+        font-weight: bold;
+    }
+}

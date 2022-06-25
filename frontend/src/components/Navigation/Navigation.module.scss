@@ -1,0 +1,8 @@
+.Navigation {
+    display: flex;
+    margin-right: 10px;
+
+    &.Sidedraw {
+        flex-direction: column;
+    }
+}

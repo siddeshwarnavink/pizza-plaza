@@ -1,0 +1,35 @@
+.PageTransition_Enter {
+    opacity: 0;
+}
+
+.PageTransition_EnterActive {
+    opacity: 1;
+}
+
+.PageTransition_Exit {
+    opacity: 1;
+}
+
+.PageTransition_ExitActive {
+    opacity: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .PageTransition_Enter {
+        transform: translateY(80vh);
+    }
+
+    .PageTransition_EnterActive {
+        transform: translateY(0);
+        transition: opacity 500ms ease-out, transform 750ms ease;
+    }
+
+    .PageTransition_Exit {
+        transform: translateY(-80vh);
+    }
+
+    .PageTransition_ExitActive {
+        transform: translateY(0);
+        transition: opacity 500ms ease-out, transform 750ms ease;
+    }
+}

@@ -1,0 +1,11 @@
+.Logo {
+    @include noSelect;
+    cursor: pointer;
+
+    .Logo__Text {
+        font-family: 'Oldenburg', cursive;
+        color: $color1;
+        font-size: 2em;
+        user-select: none; 
+    }
+}
