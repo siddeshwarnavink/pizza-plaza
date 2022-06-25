@@ -1,5 +1,5 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
-firebase_certificate.json
+# firebase_certificate.json
 
 # compiled output
 /dist
