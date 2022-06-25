@@ -1,11 +1,10 @@
-const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require('body-parser');
 const { body, validationResult } = require('express-validator');
 
-const serviceAccount = require("./pizza-plaza-3ec87-firebase-adminsdk-h53pm-7a1786c634.json");
+const serviceAccount = require("./firebase_certificate.json");
 const Routes = require("./constants/routes");
 const DbCollections = require("./constants/db_collections");
 const AlertMessages = require("./constants/alertMessages");
@@ -168,5 +167,7 @@ app.post(Routes.AUTH_CREATE_ACCOUNT,
     });
 
 
-exports.expressApp = app;
-exports.app = functions.https.onRequest(app);
+
+app.listen(process.env.PORT || 5000, () => {
+    console.log('App running');
+});
