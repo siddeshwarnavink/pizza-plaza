@@ -7,18 +7,23 @@ import PageContainer from "../../hoc/PageContainer/PageContainer";
 import OrderList from '../../components/Orders/OrderList/OrderList';
 import Auxiliary from "../../hoc/Auxiliary/Auxiliary";
 import Spinner from '../../components/UI/Spinner/Spinner';
+import RetryFallback from '../../components/RetryFallback/RetryFallback';
 
 export const CustomerOrders = props => {
     useEffect(() => {
         props.fetchOrders();
     }, []);
 
+    const retryFetchingHandler = () => {
+        props.fetchOrders();
+    }
+
     return (
         <PageContainer>
             {!props.isAuthenticated ? (
                 <Navigate to="/auth/login" replace />
             ) : null}
-            {props.ordersLoading ? <Spinner /> : (
+            {props.ordersLoading ? <Spinner /> : props.ordersError ? <RetryFallback onRetry={retryFetchingHandler} /> : (
                 <Auxiliary>
                     <h1>Orders</h1>
 
@@ -36,6 +41,7 @@ export const CustomerOrders = props => {
 const mapStateToProps = state => ({
     ordersList: state.orders.ordersList,
     ordersLoading: state.orders.isLoading,
+    ordersError: state.orders.error,
     isAuthenticated: state.auth.token !== null
 });
 

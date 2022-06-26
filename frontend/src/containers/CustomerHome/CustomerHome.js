@@ -7,15 +7,20 @@ import PageContainer from "../../hoc/PageContainer/PageContainer";
 import PizzaList from "../../components/Pizza/PizzaList/PizzaList";
 import Spinner from '../../components/UI/Spinner/Spinner';
 import Auxiliary from '../../hoc/Auxiliary/Auxiliary';
+import RetryFallback from '../../components/RetryFallback/RetryFallback';
 
 export const CustomerHome = props => {
     useEffect(() => {
         props.fetchPizzaList(isBrowser ? 8 : 2);
     }, []);
 
+    const retryFetchingHandler = () => {
+        props.fetchPizzaList(isBrowser ? 8 : 2);
+    }
+
     return (
         <PageContainer>
-            {props.pizzaListLoading ? <Spinner /> : (
+            {props.pizzaListLoading ? <Spinner /> : props.pizzaListError ? <RetryFallback onRetry={retryFetchingHandler} />: (
                 <Auxiliary>
                     <h1>Bringing you the best pizzas</h1>
 
@@ -31,13 +36,14 @@ export const CustomerHome = props => {
                     />
                 </Auxiliary>
             )}
-        </PageContainer>
+        </PageContainer >
     );
 };
 
 const mapStateToProps = state => ({
     pizzaList: state.pizzaList.pizzaList,
     pizzaListLoading: state.pizzaList.isLoading,
+    pizzaListError: state.pizzaList.error,
     pizzaListLazyLoad: state.pizzaList.lazyLoad,
     isLazyLoading: state.pizzaList.isLazyLoading
 });
