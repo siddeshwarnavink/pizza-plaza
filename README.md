@@ -44,3 +44,13 @@ npm run build
 ```
 
 Now deploy the ``build`` folder to a static server
+
+## 📸 Screenshots
+
+![Screenshot](./screenshots/sc1.jpg)
+
+![Screenshot](./screenshots/sc2.jpg)
+
+![Screenshot](./screenshots/sc3.jpg)
+
+![Screenshot](./screenshots/sc4.jpg)
